@@ -22,4 +22,8 @@ public class UserController {
     private String showError404(){
         return "error.404";
     }
+    @GetMapping("/login")
+    private String showFormLogin(){
+        return "user/login-register";
+    }
 }
