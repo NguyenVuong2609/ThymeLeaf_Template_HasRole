@@ -6,14 +6,17 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <style>
         @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900');
+
         * {
             margin: 0;
             padding: 0;
         }
+
         body {
             background: #f0f4f3;
             font-family: 'Roboto', sans-serif;
         }
+
         .button {
             border: 1px solid #fff;
             border-radius: 20px;
@@ -25,6 +28,7 @@
             text-decoration: none;
             text-transform: uppercase;
         }
+
         input[type="email"],
         input[type="password"],
         input[type="text"] {
@@ -35,6 +39,7 @@
             padding: 10px;
             width: 280px;
         }
+
         .submit-btn {
             border: none;
             border-radius: 25px;
@@ -46,12 +51,15 @@
             padding: 15px 50px;
             text-transform: uppercase;
         }
+
         #login .submit-btn {
             background: darksalmon;
         }
+
         #register .submit-btn {
             background: darksalmon;
         }
+
         #container {
             background: #ededed;
             border-radius: 10px;
@@ -60,6 +68,7 @@
             overflow: hidden;
             width: 1000px;
         }
+
         .social-login {
             color: black;
             border: 1px solid #ccc;
@@ -68,6 +77,7 @@
             height: 50px;
             width: 50px;
         }
+
         #login {
             background: #fff;
             float: left;
@@ -78,6 +88,7 @@
             top: -550px;
             z-index: 1;
         }
+
         #register {
             background: #fff;
             float: right;
@@ -88,16 +99,20 @@
             top: -550px;
             z-index: 1;
         }
+
         #login h1,
         #register h1 {
             padding: 20% 0 25px;
         }
+
         #login h1 {
             color: darksalmon;
         }
+
         #register h1 {
             color: darksalmon;
         }
+
         #login p,
         #register p {
             font-size: 12px;
@@ -105,6 +120,7 @@
             letter-spacing: 0.3px;
             padding: 20px;
         }
+
         #forgot-pass {
             border-bottom: 1px solid #ccc;
             color: #000;
@@ -114,6 +130,7 @@
             padding: 3px;
             text-decoration: none;
         }
+
         #cover {
             background: darksalmon;
             color: #fff;
@@ -125,43 +142,74 @@
             width: 50%;
             z-index: 5;
         }
+
         #cover h1 {
             padding-top: 38%;
         }
+
         #cover p {
             font-weight: 300;
             line-height: 22px;
             padding: 30px 45px 40px;
         }
+
         .sign-in {
             display: none;
         }
+
         .sub {
             position: relative;
             top: -11px;
         }
+
         #cover:target {
             background: darksalmon;
             margin: 0;
         }
+
         #cover:target .sign-up {
             display: none;
         }
+
         #cover:target .sign-in {
             display: inline-block;
         }
+
         #cover:target .login-div {
             width: 35%;
         }
-        #credit {
-            color: #999;
-            font-size: 14px;
+        @keyframes wobble-top {
+            16.65% {
+                transform: skew(-12deg);
+            }
+            33.3% {
+                transform: skew(10deg);
+            }
+            49.95% {
+                transform: skew(-6deg);
+            }
+            66.6% {
+                transform: skew(4deg);
+            }
+            83.25% {
+                transform: skew(-2deg);
+            }
+            100% {
+                transform: skew(0);
+            }
         }
-        #info {
-            background: #eaeaea;
-            color: #555;
-            padding: 20px;
-            text-align: center;
+        .wobble-top {
+            display: inline-block;
+            transform-origin: 0 100%;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            transform: translateZ(0);
+            box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+        }
+        .wobble-top:hover {
+            animation-name: wobble-top;
+            animation-duration: 1s;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: 1;
         }
     </style>
 </head>
@@ -190,7 +238,7 @@
             <input type="email" placeholder="Email" autocomplete="off"><br>
             <input type="password" placeholder="Password" autocomplete="off"><br>
             <a id="forgot-pass" href="#">Forgot your password?</a><br>
-            <input class="submit-btn" type="submit" value="Sign In">
+            <input class="submit-btn wobble-top" type="submit" value="Sign In">
         </form>
     </div>
     <!-- Register Box -->
@@ -204,7 +252,7 @@
             <input type="text" placeholder="Name" autocomplete="off"><br>
             <input type="email" placeholder="Email" autocomplete="off"><br>
             <input type="password" placeholder="Password" autocomplete="off"><br>
-            <input class="submit-btn" type="submit" value="Sign Up">
+            <input class="submit-btn wobble-top" type="submit" value="Sign Up">
         </form>
     </div>
 </div> <!-- END Container -->
