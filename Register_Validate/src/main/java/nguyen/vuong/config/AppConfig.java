@@ -1,5 +1,7 @@
 package nguyen.vuong.config;
 
+import nguyen.vuong.service.user.IUserService;
+import nguyen.vuong.service.user.UserServiceIMPL;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.ApplicationContext;
@@ -23,8 +25,8 @@ import org.thymeleaf.spring5.SpringTemplateEngine;
 import org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.spring5.view.ThymeleafViewResolver;
 import org.thymeleaf.templatemode.TemplateMode;
-import nguyen.vuong.service.IRoleService;
-import nguyen.vuong.service.RoleServiceIMPL;
+import nguyen.vuong.service.role.IRoleService;
+import nguyen.vuong.service.role.RoleServiceIMPL;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -111,13 +113,17 @@ public class AppConfig implements WebMvcConfigurer, ApplicationContextAware {
     public Properties additionalProperties() {
         Properties properties = new Properties();
         properties.setProperty("hibernate.hbm2ddl.auto", "update");
-        properties.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
+        properties.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL5InnoDBDialect");
         properties.setProperty("hibernate.show_sql","true");
         return properties;
     }
     @Bean
     public IRoleService roleService(){
         return new RoleServiceIMPL();
+    }
+    @Bean
+    public IUserService userService(){
+        return new UserServiceIMPL();
     }
 
     @Override

@@ -41,10 +41,25 @@
         <a href="#"><i class="bi bi-facebook social-login"></i></a>
         <a href="#"><i class="bi bi-twitter social-login"></i></a>
         <p>or use your email for registration:</p>
-        <form>
-            <input type="text" placeholder="Name" autocomplete="off"><br>
-            <input type="email" placeholder="Email" autocomplete="off"><br>
-            <input type="password" placeholder="Password" autocomplete="off"><br>
+        <form th:action="@{/create-user}" th:object="${user}" method="post">
+            <input type="text" placeholder="Name" autocomplete="off" th:field="*{name}"><br>
+            <span style="color: red" th:if="${#fields.hasErrors('name')}" th:error="*{name}">
+                The name must not null!
+            </span>
+            <br>
+            <input type="email" placeholder="Email" autocomplete="off" th:field="*{email}"><br>
+            <span style="color: red" th:if="${#fields.hasErrors('email')}" th:error="*{email}">
+                The email must not null!
+            </span>
+            <span style="color: red" th:if="${emailExisted} != null">
+                The email existed!
+            </span>
+            <br>
+            <input type="password" placeholder="Password" autocomplete="off" th:field="*{password}"><br>
+            <span style="color: red" th:if="${#fields.hasErrors('password')}" th:error="*{password}">
+                Password's length must be between 6-16 characters!
+            </span>
+            <br>
             <input class="submit-btn wobble-top" type="submit" value="Sign Up">
         </form>
     </div>

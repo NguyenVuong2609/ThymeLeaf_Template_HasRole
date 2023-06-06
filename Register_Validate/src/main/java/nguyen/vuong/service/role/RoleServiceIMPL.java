@@ -1,8 +1,9 @@
-package nguyen.vuong.service;
+package nguyen.vuong.service.role;
 
 import nguyen.vuong.model.Role;
 import nguyen.vuong.model.RoleName;
 import nguyen.vuong.repository.IRoleRepository;
+import nguyen.vuong.service.role.IRoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,4 +1,4 @@
-package nguyen.vuong.service;
+package nguyen.vuong.service.role;
 
 import nguyen.vuong.model.Role;
 import nguyen.vuong.model.RoleName;

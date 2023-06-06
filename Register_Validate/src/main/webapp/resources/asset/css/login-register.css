@@ -171,6 +171,8 @@ input[type="text"] {
 #cover:target .login-div {
     width: 35%;
 }
+
+/* button */
 @keyframes wobble-top {
     16.65% {
         transform: skew(-12deg);
